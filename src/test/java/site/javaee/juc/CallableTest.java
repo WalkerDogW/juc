@@ -29,6 +29,8 @@ public class CallableTest {
         FutureTask<Integer> result = new FutureTask<>(callableDemo);
         new Thread(result).start();
         //接收线程运行的结果
-        System.out.println("result = " + result.get());
+        Integer sum = result.get();
+        //主线程需等待 FutureTask.get()执行完才继续执行，可以用于闭锁操作
+        System.out.println("result = " + sum);
     }
 }

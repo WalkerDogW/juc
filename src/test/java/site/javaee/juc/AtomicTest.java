@@ -6,7 +6,7 @@ package site.javaee.juc;
  * @author Tao
  * @create 2020/5/28 10:37
  */
-public class AtomicDemoTest {
+public class AtomicTest {
     public static void main(String[] args) {
 
         volatileo();

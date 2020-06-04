@@ -11,6 +11,7 @@ import java.util.concurrent.CountDownLatch;
  */
 public class CountDownLatchTest {
     /*
+
      闭锁可以延迟线程的进度直到其到达终止状态，可用来确保某些活动直到其他活动都完成才继续执行：
          确保某个计算在其需要的所有资源都被初始化之后才继续执行;
          确保某个服务在其依赖的所有其他服务都已经启动之后才启动;

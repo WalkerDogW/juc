@@ -6,7 +6,7 @@ package site.javaee.juc;
  * @author Tao
  * @create 2020/5/28 10:55
  */
-public class VolatileDemoTest {
+public class VolatileTest {
     public static void main(String[] args) {
         /*
          内存可见性：
