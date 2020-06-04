@@ -12,4 +12,26 @@ public class ReadWriteLockTest {
     对于读取操作占 多数的数据结构，ReadWriteLock 能提供比独占锁更高 的并发性。
     而对于只读的数据结构，其中包含的不变性 可以完全不需要考虑加锁操作。
      */
+    public static void main(String[] args) {
+        readWrite();
+
+    }
+
+    public static void readWrite(){
+        ReadWeiteLockDemo rw = new ReadWeiteLockDemo();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                rw.set((int)(Math.random()*100));
+            }
+        }).start();
+        for(int i=0; i<100; i++){
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    rw.get();
+                }
+            }).start();
+        }
+    }
 }

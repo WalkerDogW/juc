@@ -13,7 +13,7 @@ public class ReadWeiteLockDemo {
 
 
     public void get() {
-        lock.readLock();
+        lock.readLock().lock();
         try {
             System.out.println(Thread.currentThread().getName() + ":" + number);
         } finally {
@@ -22,10 +22,10 @@ public class ReadWeiteLockDemo {
     }
 
     public void set(int number) {
-        lock.writeLock();
+        lock.writeLock().lock();
         try {
             this.number = number;
-            System.out.println(Thread.currentThread().getName() + ":" + number);
+            System.out.println(Thread.currentThread().getName() + ":Write:" + number);
         } finally {
             lock.writeLock().unlock();
         }
